@@ -26,7 +26,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-listbox>
         <paper-item>Item 1</paper-item>
         <paper-item>Item 2</paper-item>
+        <paper-item>Item 3</paper-item>
       </paper-listbox>
+
+      <template is="dom-bind">
+        <iron-ajax url="data.json" last-response="{{data}}" auto></iron-ajax>
+        <iron-list items="[[data]]" as="item">
+          <template>
+            <div>
+              Name: [[item.name]]
+            </div>
+          </template>
+        </iron-list>
+      </template>
+
     </form>
   </template>
   <script>

@@ -17,37 +17,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="bower_components/iron-list/iron-list.html">
 <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
 
+<link rel="import" href="data/data.json">
 
 <dom-module id="documents-form">
-  <template is:"dom-bind">
-    <style>
+  <template>
+    <style is="custom-style">
       :host {
         display: block;
       }
+
     </style>
-    <form is="iron-form" id="form" method="post" action="/form/handler">
-      <!---<paper-listbox>
-        <paper-item>Item 1</paper-item>
-        <paper-item>Item 2</paper-item>
-        <paper-item>Item 3</paper-item>
-      </paper-listbox> -->
 
-        <iron-ajax url="data.json" last-response="{{data}}" auto></iron-ajax>
-        <iron-list items="[[data]]" as="item">
-          <template>
-            <div class="item">
-              Name: [[item.name]]
-            </div>
-          </template>
-        </iron-list>
 
-    </form>
+    <ul>
+    <temlate
+        <li> Hello </li>
+    </template>
+  </ul>
+
   </template>
+
+
   <script>
+
+
   (function() {
     'use strict';
 
-    Polymer({
+
+    Polymer(
+      {
       is: 'documents-form',
 
       properties: {
@@ -57,6 +56,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           notify: true
         }
       }
+
     });
   })();
   </script>

@@ -9,23 +9,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../iron-menu-behavior/iron-menu-behavior.html">
+<link rel="import" href="../paper-styles/default-theme.html">
 
 <dom-module id="messages-form">      
   <template>
     <style>
-
         p{font-size: 14px; font-style:italic; }
     </style>
     <div>
       <table>
       <tr>
         <td width="35%">
-          <paper-listbox>
-          <paper-item>Prof. Frank French</paper-item>
-          <paper-item>Prof. Dr. Frank Koslowski</paper-item>
-          <paper-item>Prof. Dr. Frank Hubert</paper-item>
-          <paper-item>Chrisoph Pinkel</paper-item>
-          <paper-item>Prof. Dr. Clemens Martin</paper-item>
+          <paper-listbox selected="0">
+            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Frank French</paper-item>
+            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Dr. Frank Koslowski</paper-item>
+            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Dr. Frank Hubert</paper-item>
+            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Chrisoph Pinkel</paper-item>
+            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Dr. Clemens Martin</paper-item>
+          </paper-listbox>
         </td>
         <td>
           <p>
@@ -35,15 +37,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <p>
           <div align="right">24.02.2016 10.28 Uhr</div>
-          <b>Prof Frank French:</b>  <br>
+          <b>Prof Frank French:</b><br>
            Hi Steffen, whats the topic and the timeframe ? </p>
           <paper-input label="New Message"></paper-input>
-          <button>send</button>
+          <div align="right">
+          <button>Send</button></div>
         </td>
       </tr>
       </table>
 
-  </paper-listbox>
+  
 
 
     </form>

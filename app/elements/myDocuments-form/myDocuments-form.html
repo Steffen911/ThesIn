@@ -9,16 +9,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="bower_components/paper-button/paper-button.html">
-<link rel="import" href="bower_components/paper-input/paper-input.html">
-<link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="bower_components/paper-item/paper-item.html">
 <link rel="import" href="bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="bower_components/paper-icon/paper-icon.html">
+<link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
 
 <dom-module id="documents-form">
-
-
 <template>
     <style is="custom-style">
       :host {
@@ -26,7 +23,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
     </style>
-
 
   <table style="width:100%" >
     <tr>
@@ -79,19 +75,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-icon-button icon="search" on-click="handleClick"></paper-icon-button>
           </paper-item>
           <paper-item>
-            <paper-icon-button icon="search" title="heart"></paper-icon-button>
+            <paper-icon-button icon="search" on-click="handleClick"></paper-icon-button>
           </paper-item>
           <paper-item>
-            <paper-icon-button icon="search" title="heart"></paper-icon-button>
+            <paper-icon-button icon="search" on-click="handleClick"></paper-icon-button>
           </paper-item>
         </paper-listbox>
       </td>
     </tr>
   </table>
 
-  </template>
-
+</template>
   <script>
+
   (function() {
     'use strict';
     Polymer(
@@ -99,9 +95,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'documents-form',
 
       handleClick: function() {
-      //alert('Ow!');
-      debugger;
-app.route = 'documentsDetail';
+         app.route = 'documentsdetail';
     },
       //document.querySelector('app-router').go('/home');
 

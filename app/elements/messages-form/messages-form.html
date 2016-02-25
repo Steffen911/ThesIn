@@ -12,22 +12,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../iron-menu-behavior/iron-menu-behavior.html">
 <link rel="import" href="../../paper-styles/default-theme.html">
 
-<dom-module id="messages-form">      
+<dom-module id="messages-form">
   <template>
     <style>
-        p{font-size: 14px; font-style:italic; }
+        p{font-size: 14px; font-style:italic}
+      :host {
+        display: block;
+        padding: 8px 0;
+        background: var(--paper-listbox-background-color, --primary-background-color);
+        color: var(--paper-listbox-color, --primary-text-color);
+        @apply(--paper-listbox);
+      }
+
     </style>
     <div>
       <table>
       <tr>
-        <td width="35%">
+        <td width="35%";text-align: left;>
+        
           <paper-listbox selected="0">
-            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Frank French</paper-item>
-            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Dr. Frank Koslowski</paper-item>
-            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Dr. Frank Hubert</paper-item>
-            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Chrisoph Pinkel</paper-item>
-            <paper-item><iron-icon icon="account-circle"></iron-icon>  Prof. Dr. Clemens Martin</paper-item>
+            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Frank French</paper-item>
+            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Dr. Frank Koslowski</paper-item>
+            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Dr. Frank Hubert</paper-item>
+            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Chrisoph Pinkel</paper-item>
+            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Dr. Clemens Martin</paper-item>
           </paper-listbox>
+         
         </td>
         <td>
           <p>
@@ -46,7 +56,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </tr>
       </table>
 
-  
+
 
 
     </form>

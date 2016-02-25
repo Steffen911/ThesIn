@@ -17,10 +17,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="bower_components/iron-list/iron-list.html">
 <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
 
-<link rel="import" href="data/data.json">
-
 <dom-module id="documents-form">
-  <template>
+
+
+<template>
     <style is="custom-style">
       :host {
         display: block;
@@ -28,19 +28,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
+<form>
+    <paper-listbox>
+      <paper-item>Item 1</paper-item>
+      <paper-item>Item 2</paper-item>
+    </paper-listbox>
+  </form>
 
-    <ul>
-    <temlate
-        <li> Hello </li>
-    </template>
-  </ul>
+  <force-ui-data-table sobject="Contact" fields='Id, Name, FirstName, LastName, Phone, Email' orderby="Name" tableclasses="table-hover" theme="success" limitresults="14"></force-ui-data-table>
+
+
+
 
   </template>
 
-
   <script>
-
-
   (function() {
     'use strict';
 

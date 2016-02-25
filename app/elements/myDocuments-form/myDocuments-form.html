@@ -14,8 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="bower_components/paper-item/paper-item.html">
 <link rel="import" href="bower_components/paper-listbox/paper-listbox.html">
-<link rel="import" href="bower_components/iron-list/iron-list.html">
-<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="bower_components/paper-icon/paper-icon.html">
 
 <dom-module id="documents-form">
 
@@ -28,28 +27,83 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
-<form>
-    <paper-listbox>
-      <paper-item>Item 1</paper-item>
-      <paper-item>Item 2</paper-item>
-    </paper-listbox>
-  </form>
 
-  <force-ui-data-table sobject="Contact" fields='Id, Name, FirstName, LastName, Phone, Email' orderby="Name" tableclasses="table-hover" theme="success" limitresults="14"></force-ui-data-table>
-
-
-
+  <table style="width:100%" >
+    <tr>
+      <th>Description</th>
+      <th>Period</th>
+      <th>Title</th>
+      <th>Supervisor</th>
+      <th>Mark</th>
+      <th></th>
+    </tr>
+    <tr>
+        <td width="5%">
+          <paper-listbox >
+          <paper-item >PA1</paper-item>
+          <paper-item>PA2</paper-item>
+          <paper-item>BA</paper-item>
+        </paper-listbox>
+      </td>
+      <td width="35%">
+        <paper-listbox>
+          <paper-item>01.05-01.08.2016</paper-item>
+          <paper-item></paper-item>
+          <paper-item></paper-item>
+        </paper-listbox>
+      </td>
+      <td width="30%">
+        <paper-listbox>
+          <paper-item>Implementation a prototype</paper-item>
+          <paper-item></paper-item>
+          <paper-item></paper-item>
+        </paper-listbox>
+      </td>
+      <td width="20%">
+        <paper-listbox >
+          <paper-item>Frank French</paper-item>
+          <paper-item></paper-item>
+          <paper-item></paper-item>
+        </paper-listbox>
+      </td>
+      <td width="5%">
+        <paper-listbox >
+          <paper-item>1.3 </paper-item>
+          <paper-item></paper-item>
+          <paper-item></paper-item>
+        </paper-listbox>
+      </td>
+      <td width="5%">
+        <paper-listbox>
+          <paper-item>
+            <paper-icon-button icon="search" on-click="handleClick"></paper-icon-button>
+          </paper-item>
+          <paper-item>
+            <paper-icon-button icon="search" title="heart"></paper-icon-button>
+          </paper-item>
+          <paper-item>
+            <paper-icon-button icon="search" title="heart"></paper-icon-button>
+          </paper-item>
+        </paper-listbox>
+      </td>
+    </tr>
+  </table>
 
   </template>
 
   <script>
   (function() {
     'use strict';
-
-
     Polymer(
       {
       is: 'documents-form',
+
+      handleClick: function() {
+      //alert('Ow!');
+      debugger;
+app.route = 'documentsDetail';
+    },
+      //document.querySelector('app-router').go('/home');
 
       properties: {
         foo: {

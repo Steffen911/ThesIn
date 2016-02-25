@@ -9,59 +9,45 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../../app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="../../paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../../paper-styles/color.html">
-<link rel="import" href="../../paper-styles/typography.html">
-<link rel="import" href="../../iron-ajax/iron-ajax.html">
-<link rel="import" href="../../iron-icons/iron-icons.html">
-<link rel="import" href="../../iron-image/iron-image.html">
-<link rel="import" href="../iron-list.html">
 
-<dom-module id="messages-form">
-<iron-list id="list" items="[[items]]" as="item" scroll-target="html" selection-enabled multi-selection>
-      
+<dom-module id="messages-form">      
   <template>
     <style>
-        p{ font-size: 1em; font-style:italic; }
+
+        p{font-size: 14px; font-style:italic; }
     </style>
     <div>
       <table>
       <tr>
-        <th width="35%">
+        <td width="35%">
           <paper-listbox>
           <paper-item>Prof. Frank French</paper-item>
           <paper-item>Prof. Dr. Frank Koslowski</paper-item>
           <paper-item>Prof. Dr. Frank Hubert</paper-item>
           <paper-item>Chrisoph Pinkel</paper-item>
           <paper-item>Prof. Dr. Clemens Martin</paper-item>
+        </td>
+        <td>
+          <p>
+          <div align="right">23.02.2016 14.32 Uhr</div>
+          <b>Steffen Schmitz:<br></b>
+          Hello Mr. French, I would like you as my academic supervisor for my Bachelorthesis </p>
 
-          
-
-        </th>
-        <th>
-
-          <h5>23.02.2016 14.32 Uhr</h5>
-          <p>Steffen Schmitz: Hello Mr. French, I would like you as my academic supervisor for my Bachlorsthesis </p>
-          <h5>24.02.2016 10.28 Uhr</h5>
-          <p>Prof Frank French: Hi Steffen, whats the name of the topic and the timeframe? </p>
+          <p>
+          <div align="right">24.02.2016 10.28 Uhr</div>
+          <b>Prof Frank French:</b>  <br>
+           Hi Steffen, whats the topic and the timeframe ? </p>
           <paper-input label="New Message"></paper-input>
           <button>send</button>
-
-
-        </th>
+        </td>
       </tr>
       </table>
-
-    
 
   </paper-listbox>
 
 
     </form>
   </template>
-   </iron-list>
   <script>
   (function() {
     'use strict';

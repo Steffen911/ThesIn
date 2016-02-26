@@ -26,14 +26,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
+      iron-icon[icon="mail"]:hover{
+        fill:#E21A00;
+      }
+      iron-icon[icon="star"]:hover{
+        fill:#ffdb19;
+      }
+      a.mail:hover{
+        fill:yellow;
+      }
     </style>
     <form is="iron-form" id="form" method="post" action="/form/handler">
     <p><paper-input name="Search Professor" label="Search Prof."></paper-input></p>
-    <p><paper-checkbox>Informatik</paper-checkbox>
-    <paper-checkbox>Mathe</paper-checkbox>
-    <paper-checkbox>BWL</paper-checkbox>
-    <paper-checkbox>VWL</paper-checkbox>
-    <paper-checkbox>Sonstiges</paper-checkbox>
+    <p><paper-checkbox>Business Information Technology</paper-checkbox>
+    <paper-checkbox>Computer Science</paper-checkbox>
+    <paper-checkbox>Business Administration</paper-checkbox>
+    <paper-checkbox>Economics</paper-checkbox>
+    <paper-checkbox>Others</paper-checkbox>
     <paper-button raised style="float: right;"><iron-icon icon="search"></iron-icon>Search</paper-button></p>
     </form>
     <br>
@@ -62,7 +71,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon></td>
-              <td align="center"><iron-icon icon="mail"></iron-icon></td>
+              <td align="center" class="mail"><iron-icon icon="mail"></iron-icon></td>
           </tr>
           <tr>
               <td>Prof. Dr. Frank Koslowski</td>

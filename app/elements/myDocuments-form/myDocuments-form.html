@@ -24,68 +24,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
 
+      iron-icon[icon="star"]:hover{
+        fill:#ffdb19;
+      }
+
     </style>
 
-  <table style="width:100%" >
-    <tr>
-      <th>Description</th>
-      <th>Period</th>
-      <th>Title</th>
-      <th>Supervisor</th>
-      <th>Mark</th>
-      <th></th>
-    </tr>
-    <tr>
-        <td width="5%">
-          <paper-listbox >
-          <paper-item >PA1</paper-item>
-          <paper-item>PA2</paper-item>
-          <paper-item>BA</paper-item>
-        </paper-listbox>
-      </td>
-      <td width="35%">
-        <paper-listbox>
-          <paper-item>01.05-01.08.2016</paper-item>
-          <paper-item></paper-item>
-          <paper-item></paper-item>
-        </paper-listbox>
-      </td>
-      <td width="30%">
-        <paper-listbox>
-          <paper-item>Implementation a prototype</paper-item>
-          <paper-item></paper-item>
-          <paper-item></paper-item>
-        </paper-listbox>
-      </td>
-      <td width="20%">
-        <paper-listbox >
-          <paper-item>Frank French</paper-item>
-          <paper-item></paper-item>
-          <paper-item></paper-item>
-        </paper-listbox>
-      </td>
-      <td width="5%">
-        <paper-listbox >
-          <paper-item>1.3 </paper-item>
-          <paper-item></paper-item>
-          <paper-item></paper-item>
-        </paper-listbox>
-      </td>
-      <td width="5%">
-        <paper-listbox>
-          <paper-item>
-            <paper-icon-button icon="search" on-click="handleClick"></paper-icon-button>
-          </paper-item>
-          <paper-item>
-            <paper-icon-button icon="search" on-click="handleClick"></paper-icon-button>
-          </paper-item>
-          <paper-item>
-            <paper-icon-button icon="search" on-click="handleClick"></paper-icon-button>
-          </paper-item>
-        </paper-listbox>
-      </td>
-    </tr>
-  </table>
+    <table id="grid-basic" class="table table-condensed table-hover table-striped">
+      <thead>
+          <tr>
+              <th data-column-id="name">Description</th>
+              <th data-column-id="faculty">Period</th>
+              <th data-column-id="section">Title</th>
+              <th data-column-id="interests">Supervisor</th>
+              <th data-column-id="workload">Mark</th>
+              <!--<th data-column-id="rating">Rating</th> -->
+              <th data-column-id="message">Details</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>PA1</td>
+              <td>01.05. - 01.08.2015</td>
+              <td>Implementation a prototype</td>
+              <td>Frank French</td>
+              <td>1.3</td>
+              <td align="center" class="mail"><iron-icon icon="search" on-click="handleClick"></iron-icon></td>
+          </tr>
+          <tr>
+            <td>PA1</td>
+            <td>01.05. - 01.08.2015</td>
+            <td>Implementation a prototype</td>
+            <td>Frank French</td>
+            <td>1.3</td>
+            <td align="center" class="mail"><iron-icon icon="search" on-click="handleClick"></iron-icon></td>
+          </tr>
+          <tr>
+            <td>PA1</td>
+            <td>01.05. - 01.08.2015</td>
+            <td>Implementation a prototype</td>
+            <td>Frank French</td>
+            <td>1.3</td>
+            <td align="center" class="mail"><iron-icon icon="search" on-click="handleClick"></iron-icon></td>
+          </tr>
+      </tbody>
+    </table>
 
 </template>
   <script>

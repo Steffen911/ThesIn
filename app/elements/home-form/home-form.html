@@ -34,11 +34,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <br>
                 <p style="color: #ffffff; font-size: 20px;">For writing your thesis successfully its important to find a lecturer who meets your needs.</p>
                 <br>
-                <p style="color: #ffffff; font-size: 20px;">Wether your a person who needs much or less supoort of your academic supervisor.</p> 
+                <p style="color: #ffffff; font-size: 20px;">Wether your a person who needs much or less supoort of your academic supervisor.</p>
                 <br>
                 <br>
                 <br>
-                <p><paper-button toggles raised noink style="background-color: #E2001A; color: #ffffff;">FIND YOUR LECTURER</paper-button>
+                <p><paper-button toggles raised noink style="background-color: #E2001A; color: #ffffff;"on-click="handleClick">FIND YOUR LECTURER</paper-button>
             </div>
         </div>
   </template>
@@ -48,6 +48,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     Polymer({
       is: 'home-form',
+
+      handleClick: function() {
+        <!-- verweist derzeit auf das falsche Dokument. ggf. liegt das an der Namensgebung mit "-" -->
+         app.route = 'documentsdetail';
+    },
 
       properties: {
         foo: {

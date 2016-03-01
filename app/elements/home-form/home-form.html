@@ -15,23 +15,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style>
       p{font-size: 14px; font-style:italic}
       h1{font-style: italic;}
+      .bgImage{
+        background-image: url('header.jpg');
+        background-size: 100%;
+        height: 600px;
+        text-align: center;
+      };
 
     </style>
     <form is="iron-form" id="form" method="post" action="/form/handler">
-    <div align="center">
-      <p>
-        <h1>Get started to find the perfect lecturer for your thesis</h1>
-        <br>
-        <br>
-        <br>
-
-    </div>
-    <div>
-    <h3><b>Vision:</b> Every student should be able to find the perfect academic lecturer for his thesis! <br></h3>
-    <h3><b>Mission:</b> Simplify the search process <br></h3>
-    To find the perfect lecturer for each student it is neccessary to create transparacy about the available knowledge at the institution. <br>
-    With this platform every student get the chance to look for a lecture who best meets his needs. This platform also shows how busy the prof is, which leads to a fair workload for each prof.
-    </div>
+    <div class="header-content bgImage" style="width: 100%;">
+            <div class="header-content-inner">
+                <br>
+                <br>
+                <h2 style="font-size: 65px; color: #ffffff;">Find the perfect lecturer for your thesis</h2>
+                <hr>
+                <br>
+                <br>
+                <p style="color: #ffffff; font-size: 20px;">For writing your thesis successfully its important to find a lecturer who meets your needs.</p>
+                <br>
+                <p style="color: #ffffff; font-size: 20px;">Wether your a person who needs much or less supoort of your academic supervisor.</p> 
+                <br>
+                <br>
+                <br>
+                <p><paper-button toggles raised noink style="background-color: #E2001A; color: #ffffff;">FIND YOUR LECTURER</paper-button>
+            </div>
+        </div>
 
 
   </template>

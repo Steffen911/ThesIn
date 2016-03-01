@@ -12,6 +12,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
 
+<link rel="import" href="../../iron-menu-behavior/iron-menu-behavior.html">
+<link rel="import" href="../../paper-styles/default-theme.html">
+
+<!-- Bootstrap -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+
 <dom-module id="documentsdetail-form">
   <template>
     <style>
@@ -23,34 +31,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         fill:#ffdb19;
       }
 
-    paper-card.rate { @apply(--layout-horizontal); }
-    .rate-image {
-      width: 100px;
-      height: 170px;
-      background: url('./donuts.png');
-      background-size: cover;
-    }
-    .rate-content {
-      @apply(--layout-flex);
-      float: left;
-    }
-    .rate-header { @apply(--paper-font-headline); }
-    .rate-name { color: var(--paper-grey-600); margin: 10px 0; }
-    paper-icon-button.rate-icon {
-      --iron-icon-fill-color: white;
-      --iron-icon-stroke-color: var(--paper-grey-600);
+    .fileupload{
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+
     }
 
-    .upload {
-      position: relative;
-      display: inline-block;
-      align-content: center;
-      vertical-align: top;
-      background-color: #fff;
+    .uploadannouncement-content, .uploaddocument-content ,.messages{
+      @apply(--layout-center);
+      border: 1px solid gray;
+      margin: 10px;
+      padding: 10px;
+
     }
 
-    .uploadannouncement-content, .uploaddocument-content {
-        position: center;
+    .feedbackcommunication{
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .rate{
+        border: 1px solid gray;
+        padding: 10px;
+    }
+
+    .rate-header{
+      font-size: 20px;
+      padding: 1px;
     }
 
   </style>
@@ -78,73 +87,123 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </table>
 
 
-<section class="upload">
-  <paper-card class="uploadannouncement-content">
-    <!--<div class="uploadannouncement-content">-->
-        <div class="Uploadannouncement">Upload Announcement</div>
-          <paper-icon-button icon="file-upload" on-click="handleFileupload"></paper-icon-button>
-  <!--  </div>-->
-  </paper-card>
+<section>
+  <div class="fileupload">
+    <paper-card class="uploadannouncement-content" heading="Top western road trips">
+        <div class="uploadanouncement">Upload Announcement</div>
+        <paper-icon-button icon="file-upload" on-click="handleFileupload"></paper-icon-button>
+    </paper-card>
 
-  <paper-card>
-    <div class="uploaddocument-content">
-        <div class="Uploaddocument">Upload Document</div>
-          <paper-icon-button icon="file-upload" on-click="handleFileupload"></paper-icon-button>
-    </div>
-  </paper-card>
-
-
-  <paper-card class="rate">
-    <div class="rate-content">
-      <div class="card-content">
-        <div class="rate-header">Feedback</div>
-        <div>Response Time</div>
+    <paper-card>
+      <div class="uploaddocument-content">
+          <div class="Uploaddocument">Upload Document</div>
+            <paper-icon-button icon="file-upload" on-click="handleFileupload"></paper-icon-button>
       </div>
-      <div class="card-actions">
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-      </div>
-      <div>Support</div>
-      <div class="card-actions">
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-      </div>
-      <div>Presettings</div>
-      <div class="card-actions">
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-        <iron-icon icon="star" on-click="starIcon"></iron-icon>
-      </div>
-    </div>
-    <div class="rate-image"></div>
-  </paper-card>
+    </paper-card>
+  </div>
 
-  <paper-button on-click="handleSend">Senden
-    <iron-icon icon="send"></iron-icon>
-  </paper-button>
+<div class="feedbackcommunication">
 
-<div>
-  <p>
-  <div align="right">23.02.2016 14.32 Uhr</div>
-  <b>Steffen Schmitz:<br></b>
-  Hello Mr. French, I would like you as my academic supervisor for my Bachelorthesis </p>
+      <paper-card class="rate">
+        <div class="rate-content">
+          <div class="card-content">
+            <div class="rate-header">Feedback</div>
+            <div>Response Time</div>
+          </div>
+          <div class="card-actions">
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+          </div>
+          <div>Support</div>
+          <div class="card-actions">
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+          </div>
+          <div>Presettings</div>
+          <div class="card-actions">
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+            <iron-icon icon="star" on-click="starIcon"></iron-icon>
+          </div>
+        </div>
+        <div class="rate-image"></div>
 
-  <p>
-  <div align="right">24.02.2016 10.28 Uhr</div>
-  <b>Prof Frank French:</b><br>
-   Hi Steffen, whats the topic and the timeframe ? </p>
-  <paper-input label="New Message"></paper-input>
-  <div align="right">
-  <button>Send</button></div>
-</div>
+        <paper-button on-click="handleSend">Senden
+          <iron-icon icon="send"></iron-icon>
+        </paper-button>
+      </paper-card>
+
+
+    <div class="messages">
+        <div class="msg-wrap">
+            <div class="media msg ">
+                <a class="pull-left" href="#">
+                <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+                </a>
+                <div class="media-body">
+                    <small class="pull-right time"><i class="fa fa-clock-o"></i> 08:10am</small>
+                    <h5 class="media-heading">Steffen Schmitz</h5>
+                    <small class="col-lg-10">"Hello Mr. French, I'd like you as my academic supervisor for my Bachelorthesis" </small>
+                </div>
+            </div>
+
+            <div class="media msg">
+                <a class="pull-left" href="#">
+                <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+                </a>
+                <div class="media-body">
+                    <small class="pull-right time"><i class="fa fa-clock-o"></i> 09:14am</small>
+                    <h5 class="media-heading">Prof Frank French</h5>
+                    <small class="col-lg-10">"Hi Steffen, could you first tell me somthing about the topic and the timeframe?"</small>
+                </div>
+            </div>
+            <div class="media msg ">
+                <a class="pull-left" href="#">
+                <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+                </a>
+                <div class="media-body">
+                    <small class="pull-right time"><i class="fa fa-clock-o"></i> 17:10pm</small>
+                    <h5 class="media-heading">Steffen Schmitz</h5>
+                    <small class="col-lg-10">"Yes sure, the Thesis deals with quality management during software development projects. The timeframe of my thesis would be from May to August 2016" </small>
+                </div>
+            </div>
+            <br>
+           <strong>Today</strong>
+            <div class="media msg">
+                <a class="pull-left" href="#">
+                <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+                </a>
+                <div class="media-body">
+                    <small class="pull-right time"><i class="fa fa-clock-o"></i> 07:10am</small>
+                    <h5 class="media-heading">Prof Frank French</h5>
+                    <small class="col-lg-10">"Hi Steffen, that sounds interesting! I'd love to be youre academic supervisor"</small>
+                </div>
+            </div>
+        </div>
+        <br></>
+        <div class="send-wrap ">
+            <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
+        </div>
+        <div class="btn-panel">
+            <br></>
+            <p><paper-button raised style="float: left;"><iron-icon icon="cloud-upload"></iron-icon> Add Files</paper-button>
+            <paper-button raised style="float: right;">Send Message <iron-icon icon="send"></iron-icon></paper-button></p>
+        </div>
+      </div>
+  </div>
+
+
 
     <paper-icon-button icon="arrow-back" on-click="handleClick"></paper-icon-button>
   </template>

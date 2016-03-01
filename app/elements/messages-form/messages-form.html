@@ -12,49 +12,129 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../iron-menu-behavior/iron-menu-behavior.html">
 <link rel="import" href="../../paper-styles/default-theme.html">
 
+<!-- Bootstrap -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+
 <dom-module id="messages-form">
   <template>
     <style>
         p{font-size: 14px; font-style:italic}
+        btn-panel{
 
+        }
 
     </style>
-    <div>
-      <table>
-      <tr>
-        <td width="35%";text-align: left;>
-        
-          <paper-listbox selected="0">
-            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Frank French</paper-item>
-            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Dr. Frank Koslowski</paper-item>
-            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Dr. Frank Hubert</paper-item>
-            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Chrisoph Pinkel</paper-item>
-            <paper-item><iron-icon icon="account-circle" style="margin-right: 10px;"></iron-icon>  Prof. Dr. Clemens Martin</paper-item>
-          </paper-listbox>
-         
-        </td>
-        <!--<td bgcolor="#ffb3b3">-->
-        <td>
-          <p>
-          <div align="right">23.02.2016 14.32 Uhr</div>
-          <b>Steffen Schmitz:<br></b>
-          Hello Mr. French, I would like you as my academic supervisor for my Bachelorthesis </p>
+<!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">-->
+<br>
+<div class="container" style="width: 100%;">
+    <div class="row">
+            <div class="btn-panel btn-panel-conversation">
+              <p><paper-button raised><iron-icon icon="search"></iron-icon> Search</paper-button>
+              <paper-button raised><iron-icon icon="add"></iron-icon> New Message</paper-button></p>
+            </div>
+    </div>
+    <br>
+    <div class="row">
 
-          <p>
-          <div align="right">24.02.2016 10.28 Uhr</div>
-          <b>Prof Frank French:</b><br>
-           Hi Steffen, whats the topic and the timeframe ? </p>
-          <paper-input label="New Message"></paper-input>
-          <div align="right">
-          <button>Send</button></div>
-        </td>
-      </tr>
-      </table>
+        <div class="conversation-wrap col-lg-3">
+
+        <div class="media conversation">
+                <a class="pull-left" href="#">
+                 <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+                </a>
+                <div class="media-body">
+                    <h5 class="media-heading">Prof Frank French</h5>
+                    <small>Hi Steffen, that sounds interesting! I'd love to be youre academic supervisor</small>
+                </div>
+            </div>
+
+            <div class="media conversation">
+                <a class="pull-left" href="#">
+                <img src="fkoslowski.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+                </a>
+                <div class="media-body">
+                    <h5 class="media-heading">Prof. Dr. Frank Koslowski</h5>
+                    <small>Hello</small>
+                </div>
+            </div>
+
+            <div class="media conversation">
+                <a class="pull-left" href="#">
+                <img src="cmartin.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+                </a>
+                <div class="media-body">
+                    <h5 class="media-heading">Prof. Dr. Clemens Martin</h5>
+                    <small>Hello</small>
+                </div>
+            </div>
+        </div>
 
 
 
+        <div class="message-wrap col-lg-8">
+            <div class="msg-wrap">
+                <div class="media msg ">
+                    <a class="pull-left" href="#">
+                    <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
 
-    </form>
+                    </a>
+                    <div class="media-body">
+                        <small class="pull-right time"><i class="fa fa-clock-o"></i> 08:10am</small>
+                        <h5 class="media-heading">Steffen Schmitz</h5>
+                        <small class="col-lg-10">"Hello Mr. French, I'd like you as my academic supervisor for my Bachelorthesis" </small>
+                    </div>
+                </div>
+
+                <div class="media msg">
+                    <a class="pull-left" href="#">
+                    <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+                    </a>
+                    <div class="media-body">
+                        <small class="pull-right time"><i class="fa fa-clock-o"></i> 09:14am</small>
+                        <h5 class="media-heading">Prof Frank French</h5>
+                        <small class="col-lg-10">"Hi Steffen, could you first tell me somthing about the topic and the timeframe?"</small>
+                    </div>
+                </div>
+                <div class="media msg ">
+                    <a class="pull-left" href="#">
+                    <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+                    </a>
+                    <div class="media-body">
+                        <small class="pull-right time"><i class="fa fa-clock-o"></i> 17:10pm</small>
+                        <h5 class="media-heading">Steffen Schmitz</h5>
+                        <small class="col-lg-10">"Yes sure, the Thesis deals with quality management during software development projects. The timeframe of my thesis would be from May to August 2016" </small>
+                    </div>
+                </div>
+                <br>
+               <strong>Today</strong>
+                <div class="media msg">
+                    <a class="pull-left" href="#">
+                    <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+                    </a>
+                    <div class="media-body">
+                        <small class="pull-right time"><i class="fa fa-clock-o"></i> 07:10am</small>
+                        <h5 class="media-heading">Prof Frank French</h5>
+                        <small class="col-lg-10">"Hi Steffen, that sounds interesting! I'd love to be youre academic supervisor"</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="send-wrap ">
+                <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
+            </div>
+            <div class="btn-panel">
+                <br>
+                <p><paper-button raised style="float: left;"><iron-icon icon="cloud-upload"></iron-icon> Add Files</paper-button>
+                <paper-button raised style="float: right;">Send Message <iron-icon icon="send"></iron-icon></paper-button></p>
+            </div>
+        </div>
+    </div>
+</div>
   </template>
   <script>
   (function() {

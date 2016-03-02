@@ -54,10 +54,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     .rate{
       @apply(--layout-center);
-      width: 15%;
+      width: 25%;
     }
     .messages{
-      width:85%;
+      width:75%;
     }
 
 
@@ -100,6 +100,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-card class="uploadannouncement-content" heading="Top western road trips">
         <div class="uploadanouncement">Upload Announcement</div>
         <paper-icon-button icon="file-upload" on-click="handleFileupload"></paper-icon-button>
+        <paper-button data-dialog="upload" icon="file-upload"  on-click="handleFileupload">modal dialog</paper-button>
     </paper-card>
 
     <paper-card>
@@ -109,6 +110,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
     </paper-card>
   </div>
+
+  <paper-dialog id="upload" modal>
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+     <div class="buttons">
+       <paper-button dialog-confirm autofocus>Tap me to close</paper-button>
+     </div>
+   </paper-dialog>
 
 <div class="feedbackcommunication">
       <div class="rate">

@@ -37,7 +37,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     }
 
-    .uploadannouncement-content, .uploaddocument-content ,.messages{
+    .uploadannouncement-content, .uploaddocument-content ,.messages, .rate{
       @apply(--layout-center);
       border: 1px solid gray;
       margin: 10px;
@@ -47,19 +47,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     .feedbackcommunication{
       @apply(--layout-horizontal);
-      @apply(--layout-center);
       margin: 10px;
       padding: 10px;
+      width: 100%;
     }
 
     .rate{
-        border: 1px solid gray;
-        padding: 10px;
+      @apply(--layout-center);
+      width: 15%;
     }
+    .messages{
+      width:85%;
+    }
+
 
     .rate-header{
       font-size: 20px;
       padding: 1px;
+    }
+
+    .rate-content{
+
     }
 
   </style>
@@ -103,13 +111,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </div>
 
 <div class="feedbackcommunication">
-
-      <paper-card class="rate">
+      <div class="rate">
         <div class="rate-content">
-          <div class="card-content">
             <div class="rate-header">Feedback</div>
             <div>Response Time</div>
-          </div>
           <div class="card-actions">
             <iron-icon icon="star" on-click="starIcon"></iron-icon>
             <iron-icon icon="star" on-click="starIcon"></iron-icon>
@@ -139,58 +144,58 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-button on-click="handleSend">Senden
           <iron-icon icon="send"></iron-icon>
         </paper-button>
-      </paper-card>
+      </div>
 
 
     <div class="messages">
-        <div class="msg-wrap">
-            <div class="media msg ">
-                <a class="pull-left" href="#">
-                <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
-                </a>
-                <div class="media-body">
-                    <small class="pull-right time"><i class="fa fa-clock-o"></i> 08:10am</small>
-                    <h5 class="media-heading">Steffen Schmitz</h5>
-                    <small class="col-lg-10">"Hello Mr. French, I'd like you as my academic supervisor for my Bachelorthesis" </small>
-                </div>
-            </div>
-
-            <div class="media msg">
-                <a class="pull-left" href="#">
-                <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
-
-                </a>
-                <div class="media-body">
-                    <small class="pull-right time"><i class="fa fa-clock-o"></i> 09:14am</small>
-                    <h5 class="media-heading">Prof Frank French</h5>
-                    <small class="col-lg-10">"Hi Steffen, could you first tell me somthing about the topic and the timeframe?"</small>
-                </div>
-            </div>
-            <div class="media msg ">
-                <a class="pull-left" href="#">
-                <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
-
-                </a>
-                <div class="media-body">
-                    <small class="pull-right time"><i class="fa fa-clock-o"></i> 17:10pm</small>
-                    <h5 class="media-heading">Steffen Schmitz</h5>
-                    <small class="col-lg-10">"Yes sure, the Thesis deals with quality management during software development projects. The timeframe of my thesis would be from May to August 2016" </small>
-                </div>
-            </div>
-            <br>
-           <strong>Today</strong>
-            <div class="media msg">
-                <a class="pull-left" href="#">
-                <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
-
-                </a>
-                <div class="media-body">
-                    <small class="pull-right time"><i class="fa fa-clock-o"></i> 07:10am</small>
-                    <h5 class="media-heading">Prof Frank French</h5>
-                    <small class="col-lg-10">"Hi Steffen, that sounds interesting! I'd love to be youre academic supervisor"</small>
-                </div>
+        <div class="media msg ">
+            <a class="pull-left" href="#">
+            <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+            </a>
+            <div class="media-body">
+                <small class="pull-right time"><i class="fa fa-clock-o"></i> 08:10am</small>
+                <h5 class="media-heading">Steffen Schmitz</h5>
+                <small class="col-lg-10">"Hello Mr. French, I'd like you as my academic supervisor for my Bachelorthesis" </small>
             </div>
         </div>
+
+        <div class="media msg">
+            <a class="pull-left" href="#">
+            <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+            </a>
+            <div class="media-body">
+                <small class="pull-right time"><i class="fa fa-clock-o"></i> 09:14am</small>
+                <h5 class="media-heading">Prof Frank French</h5>
+                <small class="col-lg-10">"Hi Steffen, could you first tell me somthing about the topic and the timeframe?"</small>
+            </div>
+        </div>
+        <div class="media msg ">
+          <a class="pull-left" href="#">
+          <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+          </a>
+          <div class="media-body">
+              <small class="pull-right time"><i class="fa fa-clock-o"></i> 17:10pm</small>
+              <h5 class="media-heading">Steffen Schmitz</h5>
+              <small class="col-lg-10">"Yes sure, the Thesis deals with quality management during software development projects. The timeframe of my thesis would be from May to August 2016" </small>
+          </div>
+      </div>
+        <br>
+       <strong>Today</strong>
+        <div class="media msg">
+            <a class="pull-left" href="#">
+            <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+            </a>
+            <div class="media-body">
+                <small class="pull-right time"><i class="fa fa-clock-o"></i> 07:10am</small>
+                <h5 class="media-heading">Prof Frank French</h5>
+                <small class="col-lg-10">"Hi Steffen, that sounds interesting! I'd love to be youre academic supervisor"</small>
+            </div>
+        </div>
+
+
         <br></>
         <div class="send-wrap ">
             <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>

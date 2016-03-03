@@ -66,9 +66,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding: 1px;
     }
 
-    .rate-content{
+    paper-dialog.size-position {
+      position: relative;
+      width: 50%
 
     }
+
 
   </style>
 
@@ -99,24 +102,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <div class="fileupload">
     <paper-card class="uploadannouncement-content" heading="Top western road trips">
         <div class="uploadanouncement">Upload Announcement</div>
-        <paper-icon-button icon="file-upload" on-click="handleFileupload"></paper-icon-button>
-        <paper-button data-dialog="upload" icon="file-upload"  on-click="handleFileupload">modal dialog</paper-button>
+        <paper-icon-button data-dialog="upload1" icon="file-upload" on-click="handleFileupload"></paper-icon-button>
+        <text id="filename1"></text>
     </paper-card>
 
     <paper-card>
       <div class="uploaddocument-content">
           <div class="Uploaddocument">Upload Document</div>
-            <paper-icon-button icon="file-upload" on-click="handleFileupload"></paper-icon-button>
+            <paper-icon-button data-dialog="upload2"  icon="file-upload" on-click="handleFileupload"></paper-icon-button>
+            <text id="filename2"></text>
       </div>
     </paper-card>
   </div>
 
-  <paper-dialog id="upload" modal>
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <paper-dialog id="upload1" modal>
+     <p>Upload File</p>
+    <input type="file" name="File" id="file1"></input>
      <div class="buttons">
-       <paper-button dialog-confirm autofocus>Tap me to close</paper-button>
+       <paper-button on-click="closeDialog1" dialog-confirm autofocus>Upload</paper-button>
      </div>
    </paper-dialog>
+
+   <paper-dialog id="upload2" modal>
+      <p>Upload File</p>
+     <input type="file" name="File" id="file2"></input>
+      <div class="buttons">
+        <paper-button on-click="closeDialog2" dialog-confirm autofocus>Upload</paper-button>
+      </div>
+    </paper-dialog>
+
 
 <div class="feedbackcommunication">
       <div class="rate">
@@ -236,7 +250,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     handleFileupload :function(e){
-      debugger;
         var button = e.target;
         while (!button.hasAttribute('data-dialog') && button !== document.body) {
           button = button.parentElement;
@@ -251,13 +264,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     },
 
-    starIcon: function(star, value) {
+    closeDialog1: function(){
       debugger;
+      var name = this.$.file1.value;
+      filename1.textContent = name;
+    },
+
+    closeDialog2: function(){
+      debugger;
+      var name = this.$.file2.value;
+      filename2.textContent = name;
+    },
+
+
+    starIcon: function(star, value) {
       star.toElement.style.fill="#ffdb19"
     },
 
     updateValue : function(event, detail){
-      debugger;
       var s = event.model.index;
        this.value = s + Number(s >= this.value);
     },

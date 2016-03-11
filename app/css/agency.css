@@ -224,7 +224,7 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 header {
-  background-image: url('/Users/MajkenPlugge/Documents/workspace/ThesIn/app/images/header.png');
+  background-image: url('../images/header.jpg');
   background-repeat: none;
   background-attachment: scroll;
   background-position: center center;

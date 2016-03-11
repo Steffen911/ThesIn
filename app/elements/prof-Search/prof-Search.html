@@ -1,0 +1,123 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+
+<!-- Imports für Table -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+<link rel="stylesheet" href="../../bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css">
+
+<dom-module id="prof-search">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      iron-icon[icon="mail"]:hover{
+        fill:#E21A00;
+      }
+      iron-icon[icon="star"]:hover{
+        fill:#ffdb19;
+      }
+      a.mail:hover{
+        fill:yellow;
+      }
+    </style>
+    <form is="iron-form" id="form" method="post" action="/form/handler">
+    <p><paper-input name="Search Professor" label="Search Prof."></paper-input></p>
+    <p><paper-checkbox>Business Information Technology</paper-checkbox>
+    <paper-checkbox>Computer Science</paper-checkbox>
+    <paper-checkbox>Business Administration</paper-checkbox>
+    <paper-checkbox>Economics</paper-checkbox>
+    <paper-checkbox>Others</paper-checkbox>
+    <paper-button raised style="float: right;"><iron-icon icon="search"></iron-icon>Search</paper-button></p>
+    </form>
+    <br>
+    <br>
+    <br>
+    <table id="grid-basic" class="table table-condensed table-hover table-striped">
+      <thead>
+          <tr>
+              <th data-column-id="name">Name</th>
+              <th data-column-id="faculty">Faculty</th>
+              <th data-column-id="section">Section</th>
+              <th data-column-id="interests">Interests</th>
+              <th data-column-id="workload">Workload</th>
+              <th data-column-id="rating">Rating</th>
+              <th data-column-id="message">Message</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Frank French</td>
+              <td>Business Information Technology</td>
+              <td>Integration Seminar</td>
+              <td></td>
+              <td align="center"><iron-icon icon="remove-circle" style="fill:green"></iron-icon></td>
+              <td><iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon></td>
+              <td align="center" class="mail"><iron-icon icon="mail"></iron-icon></td>
+          </tr>
+          <tr>
+              <td>Prof. Dr. Frank Koslowski</td>
+              <td>Business Information Technology</td>
+              <td>Business Administration</td>
+              <td></td>
+              <td align="center"><iron-icon icon="check-circle" style="fill:yellow"></iron-icon></td>
+              <td><iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon></td>
+              <td align="center"><iron-icon icon="mail"></iron-icon></td>
+          </tr>
+          <tr>
+              <td>Prof. Dr. Armin Wiedemann</td>
+              <td>Computer Science</td>
+              <td>Computer Science</td>
+              <td></td>
+              <td align="center"><iron-icon icon="cancel" style="fill:red"></iron-icon></td>
+              <td><iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon></td>
+              <td align="center"><iron-icon icon="mail"></iron-icon></td>
+          </tr>
+      </tbody>
+    </table>
+  </template>
+  <script type="text/javascript">
+    $("#grid-basic").bootgrid();
+  </script>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'prof-search',
+
+      properties: {
+        foo: {
+          type: String,
+          value: 'prof-search',
+          notify: true
+        }
+      }
+    });
+  })();
+  </script>
+</dom-module>

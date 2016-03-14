@@ -12,7 +12,7 @@
    <title>ThesIn Login</title>
 
     <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
    <!-- Custom CSS -->
    <link href="css/agency.css" rel="stylesheet">
@@ -75,7 +75,17 @@
 
           <script>
     function myFunction() {
-      document.location.href = 'http://localhost:5000/home.html';
+      //professor@dhbw.de
+      //student@dhbw.de
+      //inputEmail
+      var sEmailAdress = document.getElementById("inputEmail").value;
+      if(sEmailAdress.indexOf("s") >= 0 ){
+        document.location.href = 'http://localhost:5000/home.html';
+      }
+      else if (sEmailAdress.indexOf("p") >= 0 ) {
+        document.location.href = 'http://localhost:5000/homeprof.html';
+      }
+
 
     }
     </script>

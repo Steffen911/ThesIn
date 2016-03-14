@@ -9,10 +9,10 @@ body {
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .text-muted {
-  color: #777777;
+  /*color: #777777;*/
 }
 .text-primary {
-  color: #fed136;
+  /*color: #fed136;*/
 }
 p {
   font-size: 14px;
@@ -29,13 +29,13 @@ a.active {
   outline: none;
 }
 a {
-  color: #fed136;
+  /*color: #fed136;*/
 }
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #fE2001A;
+/*  color: #fE2001A;*/
 }
 
 .img-centered {
@@ -209,7 +209,7 @@ header .intro-text .intro-heading {
 
 .btn.btn-signin {
     /*background-color: #4d90fe; */
-    background-color: rgb(104, 145, 162);
+    background-color: #E2001A;
     /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
     padding: 0px;
     font-weight: 700;
@@ -228,17 +228,17 @@ header .intro-text .intro-heading {
 .btn.btn-signin:hover,
 .btn.btn-signin:active,
 .btn.btn-signin:focus {
-    background-color: rgb(12, 97, 33);
+    background-color: orange;
 }
 
 .forgot-password {
-    color: rgb(104, 145, 162);
+    color: #4a4a4a ;
 }
 
 .forgot-password:hover,
 .forgot-password:active,
 .forgot-password:focus{
-    color: rgb(12, 97, 33);
+    color: #000;
 }
 
 footer {

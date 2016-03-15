@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
 
 <!-- Imports für Table -->
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -37,64 +38,60 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
     <form is="iron-form" id="form" method="post" action="/form/handler">
-    <p><paper-input name="Search Professor" label="Search Prof."></paper-input></p>
-    <p><paper-checkbox>Business Information Technology</paper-checkbox>
-    <paper-checkbox>Computer Science</paper-checkbox>
-    <paper-checkbox>Business Administration</paper-checkbox>
-    <paper-checkbox>Economics</paper-checkbox>
-    <paper-checkbox>Others</paper-checkbox>
-    <paper-button raised style="float: right;"><iron-icon icon="search"></iron-icon>Search</paper-button></p>
+        <paper-dropdown-menu label="Search Criteria">
+        <paper-listbox class="dropdown-content" selected="0">
+          <paper-item>Thesis Title</paper-item>
+          <paper-item>Lecturer</paper-item>
+          <paper-item>Name</paper-item>
+          <paper-item>Matriculation Number</paper-item>
+        </paper-listbox>
+        </paper-dropdown-menu>
+        <p><paper-input name="Search Professor" label="Search Thesis"></paper-input></p>
+        <p>
+          <paper-button raised style="float: right;"><iron-icon icon="search"></iron-icon>Search</paper-button>
+        </p>
     </form>
-    <br>
-    <br>
-    <br>
+      <br>
+      <br>
+      <br>
     <table id="grid-basic" class="table table-condensed table-hover table-striped">
       <thead>
           <tr>
-              <th data-column-id="name">Name</th>
-              <th data-column-id="faculty">Faculty</th>
-              <th data-column-id="section">Section</th>
-              <th data-column-id="interests">Interests</th>
-              <th data-column-id="workload">Workload</th>
-              <th data-column-id="rating">Rating</th>
+              <th data-column-id="name">Thesis Title</th>
+              <th data-column-id="faculty">Student</th>
+              <th data-column-id="section">Matriculation Number</th>
+              <th data-column-id="interests">Main Topic</th>
+              <th data-column-id="workload">Lecturer</th>
+              <th data-column-id="rating">Restriction Note</th>
               <th data-column-id="message">Message</th>
           </tr>
       </thead>
       <tbody>
           <tr>
               <td>Frank French</td>
-              <td>Business Information Technology</td>
-              <td>Integration Seminar</td>
-              <td></td>
-              <td align="center"><iron-icon icon="remove-circle" style="fill:green"></iron-icon></td>
-              <td><iron-icon icon="star"></iron-icon>
-                  <iron-icon icon="star"></iron-icon>
-                  <iron-icon icon="star"></iron-icon>
-                  <iron-icon icon="star"></iron-icon></td>
+              <td>Shakira Steger</td>
+              <td>S165943</td>
+              <td>Accounting</td>
+              <td>Frank French</td>
+              <td align="center"><iron-icon icon="cancel" style="fill:green"></iron-icon></td>
               <td align="center" class="mail"><iron-icon icon="mail"></iron-icon></td>
           </tr>
           <tr>
               <td>Prof. Dr. Frank Koslowski</td>
-              <td>Business Information Technology</td>
-              <td>Business Administration</td>
-              <td></td>
-              <td align="center"><iron-icon icon="check-circle" style="fill:yellow"></iron-icon></td>
-              <td><iron-icon icon="star"></iron-icon>
-                  <iron-icon icon="star"></iron-icon>
-                  <iron-icon icon="star"></iron-icon>
-                  <iron-icon icon="star"></iron-icon></td>
+              <td>Cara Damm</td>
+              <td>S683214</td>
+              <td>Economics</td>
+              <td>Prof. Dr. Frank Koslowski</td>
+              <td align="center"><iron-icon icon="check-circle"  style="fill:red"></iron-icon></td>
               <td align="center"><iron-icon icon="mail"></iron-icon></td>
           </tr>
           <tr>
               <td>Prof. Dr. Armin Wiedemann</td>
-              <td>Computer Science</td>
-              <td>Computer Science</td>
-              <td></td>
-              <td align="center"><iron-icon icon="cancel" style="fill:red"></iron-icon></td>
-              <td><iron-icon icon="star"></iron-icon>
-                  <iron-icon icon="star"></iron-icon>
-                  <iron-icon icon="star"></iron-icon>
-                  <iron-icon icon="star"></iron-icon></td>
+              <td>Steffen Schmitz</td>
+              <td>S159258</td>
+              <td>Systems Analysis</td>
+              <td>Prof. Dr. Armin Wiedemann</td>
+              <td align="center"><iron-icon icon="cancel" style="fill:green"></iron-icon></td>
               <td align="center"><iron-icon icon="mail"></iron-icon></td>
           </tr>
       </tbody>

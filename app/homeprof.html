@@ -82,30 +82,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Home</span>
           </a>
 
-          <a data-route="search" href="{{baseUrl}}search">
-            <iron-icon icon="search"></iron-icon>
+          <a data-route="searchprof" href="{{baseUrl}}searchprof">
+            <iron-icon icon="account-circle"></iron-icon>
             <span>Search</span>
           </a>
 
-          <a data-route="myDocuments" href="{{baseUrl}}myDocuments">
+          <a data-route="requestsprof" href="{{baseUrl}}requestsprof">
             <iron-icon icon="description"></iron-icon>
-            <span>My Documents</span>
+            <span>Requests</span>
           </a>
 
-          <a data-route="messages" href="{{baseUrl}}messages">
+          <a data-route="curatedpapersprof" href="{{baseUrl}}curatedpapersprof">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Curated Papers</span>
+          </a>
+
+          <a data-route="messagesprof" href="{{baseUrl}}messagesprof">
             <iron-icon icon="mail"></iron-icon>
             <span>Messages</span>
           </a>
 
-          <a data-route="profile" href="{{baseUrl}}profile">
+          <a data-route="profileprof" href="{{baseUrl}}profileprof">
             <iron-icon icon="account-circle"></iron-icon>
             <span>Profile</span>
           </a>
 
-          <a data-route="searchprof" href="{{baseUrl}}searchprof">
-            <iron-icon icon="account-circle"></iron-icon>
-            <span>Search Prof</span>
-          </a>
+          
         </paper-menu>
       </paper-scroll-header-panel>
 
@@ -143,10 +145,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
             </section>
 
-            <section data-route="search">
+            <section data-route="searchprof">
               <paper-material elevation="1">
                 <h2 class="page-title">Search</h2>
-                <search-form></search-form>
+                <prof-search></prof-search>
               </paper-material>
             </section>
 
@@ -157,42 +159,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
             </section>
 
-            <section data-route="myDocuments">
+            <section data-route="requestsprof">
               <paper-material elevation="1">
-                <h2 class="page-title">My Documents</h2>
-                <documents-form></documents-form>
+                <h2 class="page-title">Requests</h2>
+                <prof-requests></prof-requests>
                 <!--<documentsDetail-form></documentsDetail-form>-->
               </paper-material>
             </section>
 
-            <section data-route="documentsdetail">
+            <section data-route="curatedpapersprof">
               <paper-material elevation="1">
-                <h2 class="page-title">Documents Detail</h2>
-                <documentsDetail-form></ddocumentsdetail-form>
+                <h2 class="page-title">Curated Papers</h2>
+                <prof-curatedPapers></prof-curatedPapers>
               </paper-material>
             </section>
 
-            <section data-route="messages">
+            <section data-route="messagesprof">
               <paper-material elevation="1">
                 <h2 class="page-title">Messages</h2>
                <!-- <p>Hier kommen die Inhalte für Nachrichten rein.</p> -->
-                <messages-form></messages-form>
+                <prof-messages></prof-messages>
               </paper-material>
             </section>
 
-            <section data-route="profile">
+            <section data-route="profileprof">
               <paper-material elevation="1">
-<!--                <h2 class="page-title">Profile</h2>
-                <p>Hier kommen die Inhalte für Profil rein.</p>
--->
-                <profile-form></profile-form>
-              </paper-material>
-            </section>
-
-            <section data-route="searchprof">
-              <paper-material elevation="1">
-                <h2 class="page-title">Search</h2>
-                <prof-search></prof-search>
+                <h2 class="page-title">Profile</h2>
+                <prof-profile></prof-profile>
               </paper-material>
             </section>
           </iron-pages>

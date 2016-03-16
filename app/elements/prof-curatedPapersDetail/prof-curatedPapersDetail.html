@@ -1,0 +1,261 @@
+
+
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+
+<link rel="import" href="../../iron-menu-behavior/iron-menu-behavior.html">
+<link rel="import" href="../../paper-styles/default-theme.html">
+
+<!-- Bootstrap -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+
+<dom-module id="prof-curatedPapersDetail">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      iron-icon[icon="star"]:hover{
+        fill:#ffdb19;
+      }
+
+    .fileupload{
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+
+    }
+
+    .uploadannouncement-content, .uploaddocument-content ,.messages, .rate{
+      @apply(--layout-center);
+      border: 1px solid gray;
+      margin: 10px;
+      padding: 10px;
+
+    }
+
+    .feedbackcommunication{
+      @apply(--layout-horizontal);
+      margin: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .rate{
+      @apply(--layout-center);
+      width: 25%;
+    }
+    .messages{
+      width:75%;
+    }
+
+
+    .rate-header{
+      font-size: 20px;
+      padding: 1px;
+    }
+
+    paper-dialog.size-position {
+      position: relative;
+      width: 50%
+
+    }
+
+
+  </style>
+
+  <table id="grid-basic" class="table table-condensed table-hover table-striped">
+    <thead>
+        <tr>
+          <th data-column-id="name">Title</th>
+          <th data-column-id="faculty">Student</th>
+          <th data-column-id="section">Type</th>
+          <th data-column-id="interests">Grade</th>
+          <!--<th data-column-id="rating">Rating</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>SWOT-analysis</td>
+          <td>Mike Müller</td>
+          <td>PA2</td>
+          <td>1.3</td>
+        </tr>
+    </tbody>
+  </table>
+
+
+<section>
+  <div class="fileupload">
+    <paper-card class="uploadannouncement-content" heading="Top western road trips">
+        <div class="uploadanouncement">Upload Announcement</div>
+        <paper-icon-button data-dialog="upload1" icon="file-upload" on-click="handleFileupload"></paper-icon-button>
+        <text id="filename1"></text>
+    </paper-card>
+
+    <paper-card>
+      <div class="uploaddocument-content">
+          <div class="Uploaddocument">Upload Document</div>
+            <paper-icon-button data-dialog="upload2"  icon="file-upload" on-click="handleFileupload"></paper-icon-button>
+            <text id="filename2"></text>
+      </div>
+    </paper-card>
+  </div>
+
+  <paper-dialog id="upload1" modal>
+     <p>Upload File</p>
+    <input type="file" name="File" id="file1"></input>
+     <div class="buttons">
+       <paper-button on-click="closeDialog1" dialog-confirm autofocus>Upload</paper-button>
+     </div>
+   </paper-dialog>
+
+   <paper-dialog id="upload2" modal>
+      <p>Upload File</p>
+     <input type="file" name="File" id="file2"></input>
+      <div class="buttons">
+        <paper-button on-click="closeDialog2" dialog-confirm autofocus>Upload</paper-button>
+      </div>
+    </paper-dialog>
+
+
+
+
+    <div class="messages">
+        <div class="media msg ">
+            <a class="pull-left" href="#">
+            <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+            </a>
+            <div class="media-body">
+                <small class="pull-right time"><i class="fa fa-clock-o"></i> 08:10am</small>
+                <h5 class="media-heading">Steffen Schmitz</h5>
+                <small class="col-lg-10">"Hello Mr. French, I'd like you as my academic supervisor for my Bachelorthesis" </small>
+            </div>
+        </div>
+
+        <div class="media msg">
+            <a class="pull-left" href="#">
+            <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+            </a>
+            <div class="media-body">
+                <small class="pull-right time"><i class="fa fa-clock-o"></i> 09:14am</small>
+                <h5 class="media-heading">Prof Frank French</h5>
+                <small class="col-lg-10">"Hi Steffen, could you first tell me somthing about the topic and the timeframe?"</small>
+            </div>
+        </div>
+        <div class="media msg ">
+          <a class="pull-left" href="#">
+          <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+          </a>
+          <div class="media-body">
+              <small class="pull-right time"><i class="fa fa-clock-o"></i> 17:10pm</small>
+              <h5 class="media-heading">Steffen Schmitz</h5>
+              <small class="col-lg-10">"Yes sure, the Thesis deals with quality management during software development projects. The timeframe of my thesis would be from May to August 2016" </small>
+          </div>
+      </div>
+        <br>
+       <strong>Today</strong>
+        <div class="media msg">
+            <a class="pull-left" href="#">
+            <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+
+            </a>
+            <div class="media-body">
+                <small class="pull-right time"><i class="fa fa-clock-o"></i> 07:10am</small>
+                <h5 class="media-heading">Prof Frank French</h5>
+                <small class="col-lg-10">"Hi Steffen, that sounds interesting! I'd love to be youre academic supervisor"</small>
+            </div>
+        </div>
+
+
+        <br></>
+        <div class="send-wrap ">
+            <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
+        </div>
+        <div class="btn-panel">
+            <br></>
+            <p><paper-button raised style="float: left;"><iron-icon icon="cloud-upload"></iron-icon> Add Files</paper-button>
+            <paper-button raised style="float: right;">Send Message <iron-icon icon="send"></iron-icon></paper-button></p>
+        </div>
+      </div>
+  </div>
+
+
+
+    <paper-icon-button icon="arrow-back" on-click="handleClick"></paper-icon-button>
+  </template>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'prof-curatedPapersDetail',
+
+      handleClick: function() {
+        app.route = 'prof-curatedPapers';
+    },
+
+
+    handleFileupload :function(e){
+        var button = e.target;
+        while (!button.hasAttribute('data-dialog') && button !== document.body) {
+          button = button.parentElement;
+        }
+        if (!button.hasAttribute('data-dialog')) {
+          return;
+        }
+        var id = button.getAttribute('data-dialog');
+        var dialog = document.getElementById(id);
+        if (dialog) {
+          dialog.open();
+      }
+    },
+
+    closeDialog1: function(){
+      debugger;
+      var name = this.$.file1.value;
+      filename1.textContent = name;
+    },
+
+    closeDialog2: function(){
+      debugger;
+      var name = this.$.file2.value;
+      filename2.textContent = name;
+    },
+
+
+    starIcon: function(star, value) {
+      star.toElement.style.fill="#ffdb19"
+    },
+
+    updateValue : function(event, detail){
+      var s = event.model.index;
+       this.value = s + Number(s >= this.value);
+    },
+
+      properties: {
+        foo: {
+          type: String,
+          value: 'prof-cruratedPapersDetail',
+          notify: true
+        }
+      }
+    });
+  })();
+  </script>
+</dom-module>

@@ -75,16 +75,24 @@
 
           <script>
     function myFunction() {
-      //professor@dhbw.de
-      //student@dhbw.de
-      //inputEmail
+      //inputEmail: student@dhbw.de professor@dhbw.de
       var sEmailAdress = document.getElementById("inputEmail").value;
+      if(sEmailAdress.indexOf("s") >= 0 ){
+        window.location.href = 'home.html';
+      }
+      else if (sEmailAdress.indexOf("p") >= 0 ) {
+        window.location.href =  'homeprof.html';
+      }
+
+
+      /*
       if(sEmailAdress.indexOf("s") >= 0 ){
         document.location.href = 'http://localhost:5000/home.html';
       }
       else if (sEmailAdress.indexOf("p") >= 0 ) {
         document.location.href = 'http://localhost:5000/homeprof.html';
       }
+      */
 
 
     }

@@ -10,6 +10,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../bower_components/paper-icon/paper-icon.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
 <dom-module id="prof-curatedPapers">
   <template>
     <style>
@@ -18,13 +26,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
     <div>Hello from <span>{{foo}}</span></div>
+    <table id="grid-basic" class="table table-condensed table-hover table-striped">
+      <thead>
+          <tr>
+              <th data-column-id="name">Title</th>
+              <th data-column-id="faculty">Student</th>
+              <th data-column-id="section">Type</th>
+              <th data-column-id="interests">Grade</th>
+              <!--<th data-column-id="rating">Rating</th> -->
+              <th data-column-id="message">Details</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>SWOT-analysis</td>
+              <td>Mike Müller</td>
+              <td>PA2</td>
+              <td>1.3</td>
+              <td align="center" class="mail"><iron-icon icon="search" on-click="handleClick"></iron-icon></td>
+          </tr>
+          <tr>
+            <td>Java-Program</td>
+            <td>Peter Parker</td>
+            <td>BA</td>
+            <td>1.0</td>
+            <td align="center" class="mail"><iron-icon icon="search" on-click="handleClick"></iron-icon></td>
+          </tr>
+      </tbody>
+    </table>
   </template>
   <script>
   (function() {
     'use strict';
 
+
+
     Polymer({
       is: 'prof-curatedPapers',
+
+      handleClick: function() {
+        debugger;
+         app.route = 'curatedpapersprofdetail';
+    },
 
       properties: {
         foo: {

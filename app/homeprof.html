@@ -77,7 +77,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Content -->
         <paper-menu attr-for-selected="data-route" selected="[[route]]">
-          <a data-route="home" href="{{baseUrl}}">
+          <a data-route="homeprof" href="{{baseUrl}}">
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
           </a>
@@ -107,7 +107,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Profile</span>
           </a>
 
-          
+
         </paper-menu>
       </paper-scroll-header-panel>
 
@@ -173,6 +173,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
             </section>
 
+            <section data-route="curatedpapersprofdetail">
+              <paper-material elevation="1">
+                <h2 class="page-title">Curated Papers</h2>
+                <prof-curatedPapersDetail></prof-curatedPapersDetail>
+              </paper-material>
+            </section>
+
+
+
             <section data-route="messagesprof">
               <paper-material elevation="1">
                 <h2 class="page-title">Messages</h2>
@@ -186,7 +195,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <prof-profile></prof-profile>
               </paper-material>
             </section>
-            
+
           </iron-pages>
         </div>
       </paper-scroll-header-panel>

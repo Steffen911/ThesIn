@@ -41,6 +41,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'home';
     });
 
+    page('/home.html', function() {
+      app.route = 'home';
+    });
+
     page(app.baseUrl, function() {
       app.route = 'home';
     });
@@ -66,6 +70,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'profile';
     });
 
+    page('/homeprof.html', function() {
+     app.route = 'homeprof';
+   });
+
+
     page('/searchprof', function() {
       app.route = 'searchprof';
     });
@@ -80,6 +89,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/curatedpapersprof', function() {
       app.route = 'curatedpapersprof';
+    });
+
+    page('/curatedpapersprofdetail', function() {
+      app.route = 'curatedpapersprofdetail';
     });
 
     page('/profileprof', function() {

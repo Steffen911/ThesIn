@@ -16,8 +16,62 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
+      iron-icon[icon="mail"]:hover{
+        fill:#E21A00;
+      }
+      iron-icon[icon="star"]:hover{
+        fill:#ffdb19;
+      }
+      a.mail:hover{
+        fill:yellow;
+      }
+      a.check:hover{
+        fill:green;
+      }
     </style>
-    <div>Hello from <span>{{foo}}</span></div>
+    <table id="grid-basic" class="table table-condensed table-hover table-striped">
+      <thead>
+          <tr>
+              <th data-column-id="title">Title</th>
+              <th data-column-id="student">Student</th>
+              <th data-column-id="degreeCourse">Degree Course</th>
+              <th data-column-id="course">Course</th>
+              <th data-column-id="type">Type</th>
+              <th data-column-id="period">Period</th>
+              <th data-column-id="actions">Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>********</td>
+              <td>Marco Thomas</td>
+              <td>WWI</td>
+              <td>15SCA</td>
+              <td>PA1</td>
+              <td>18.02.2015-21.05.2015</td>
+              <td><iron-icon icon="check" style="fill:green"></iron-icon><iron-icon icon="clear" style="fill:red"></iron-icon></td>
+          </tr>
+          <tr>
+              <td>********</td>
+              <td>Peter Schmidt</td>
+              <td>WWI</td>
+              <td>12SCC</td>
+              <td>PA2</td>
+              <td>15.06.2015-16.09.2015</td>
+              <td><iron-icon icon="check" style="fill:green"></iron-icon><iron-icon icon="clear" style="fill:red"></iron-icon></td>
+          </tr>
+          <tr>
+              <td>********</td>
+              <td>Mike Müller</td>
+              <td>WWI</td>
+              <td>13SCA</td>
+              <td>BA</td>
+              <td>15.03.2015-16.06.2015</td>
+              <td><iron-icon icon="check" style="fill:green"></iron-icon><iron-icon icon="clear" style="fill:red"></iron-icon></td>
+          </tr>
+      </tbody>
+    </table>
+  </template>
   </template>
   <script>
   (function() {

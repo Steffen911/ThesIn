@@ -43,15 +43,15 @@ template {
   display: none;
 }
 
-avatar {
-float: none;
-margin: 0 auto;
-width: 50%;
-height: 50%;
--webkit-border-radius: 50% !important;
--moz-border-radius: 50% !important;
-border-radius: 50% !important;
+
+
+student-prof {
+  display: inline-block;
+  vertical-align: middle;
+  float: none
 }
+
+
 
 a {
   background-color: transparent;
@@ -1144,9 +1144,14 @@ img {
 .img-rounded {
   border-radius: 6px;
 }
+
+.img-circle {
+  border-radius: 50%;
+}
+
 .img-thumbnail {
   display: inline-block;
-  max-width: 100%;
+  max-width: 40%;
   height: auto;
   padding: 4px;
   line-height: 1.42857143;
@@ -1157,9 +1162,7 @@ img {
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
 }
-.img-circle {
-  border-radius: 50%;
-}
+
 hr {
   margin-top: 20px;
   margin-bottom: 20px;

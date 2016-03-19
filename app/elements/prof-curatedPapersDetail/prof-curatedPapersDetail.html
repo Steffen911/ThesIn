@@ -68,6 +68,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding: 1px;
     }
 
+    .btn-panel{
+      margin: auto;
+      padding: 50px;
+    }
+
     paper-dialog.size-position {
       position: relative;
       width: 50%
@@ -90,9 +95,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <tbody>
         <tr>
           <td>SWOT-analysis</td>
-          <td>Mike Müller</td>
+          <td>Majken Plügge</td>
           <td>PA2</td>
-          <td>1.3</td>
+          <td></td>
         </tr>
     </tbody>
   </table>
@@ -101,33 +106,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <section>
   <div class="fileupload">
     <paper-card class="uploadannouncement-content" heading="Top western road trips">
-        <div class="uploadanouncement">Upload Announcement</div>
-        <paper-icon-button data-dialog="upload1" icon="file-upload" on-click="handleFileupload"></paper-icon-button>
+        <div class="uploadanouncement">Announcement</div>
+        <paper-icon-button data-dialog="upload1" icon="rounded-corner" on-click="handleFileupload"></paper-icon-button>
         <text id="filename1"></text>
     </paper-card>
 
     <paper-card>
       <div class="uploaddocument-content">
-          <div class="Uploaddocument">Upload Document</div>
-            <paper-icon-button data-dialog="upload2"  icon="file-upload" on-click="handleFileupload"></paper-icon-button>
+          <div class="Uploaddocument">Thesis</div>
+            <paper-icon-button data-dialog="upload2"  icon="rounded-corner" on-click="handleFileupload"></paper-icon-button>
             <text id="filename2"></text>
       </div>
     </paper-card>
   </div>
 
   <paper-dialog id="upload1" modal>
-     <p>Upload File</p>
-    <input type="file" name="File" id="file1"></input>
+     <p>Download Announcment</p>
+    <h3>No Announchment uploaded!</h3>
      <div class="buttons">
-       <paper-button on-click="closeDialog1" dialog-confirm autofocus>Upload</paper-button>
+       <paper-button on-click="closeDialog1" dialog-confirm autofocus>Download</paper-button>
      </div>
    </paper-dialog>
 
    <paper-dialog id="upload2" modal>
-      <p>Upload File</p>
-     <input type="file" name="File" id="file2"></input>
+      <p>Download Thesis</p>
+     <h3>No Thesis uploaded!</h3>
       <div class="buttons">
-        <paper-button on-click="closeDialog2" dialog-confirm autofocus>Upload</paper-button>
+        <paper-button on-click="closeDialog2" dialog-confirm autofocus>Download</paper-button>
       </div>
     </paper-dialog>
 
@@ -137,34 +142,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div class="messages">
         <div class="media msg ">
             <a class="pull-left" href="#">
-            <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+            <img src="http://localhost:5000/images/mpluegge.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
             </a>
             <div class="media-body">
                 <small class="pull-right time"><i class="fa fa-clock-o"></i> 08:10am</small>
-                <h5 class="media-heading">Steffen Schmitz</h5>
-                <small class="col-lg-10">"Hello Mr. French, I'd like you as my academic supervisor for my Bachelorthesis" </small>
+                <h5 class="media-heading">Majken Plügge</h5>
+                <small class="col-lg-10">"Hello Mr. Kern, I'd like you as my academic supervisor for my Bachelorthesis" </small>
             </div>
         </div>
 
         <div class="media msg">
             <a class="pull-left" href="#">
-            <img src="ffrench.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+            <img src="fhttp://localhost:5000/images/ffrench.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
 
             </a>
             <div class="media-body">
                 <small class="pull-right time"><i class="fa fa-clock-o"></i> 09:14am</small>
-                <h5 class="media-heading">Prof Frank French</h5>
-                <small class="col-lg-10">"Hi Steffen, could you first tell me somthing about the topic and the timeframe?"</small>
+                <h5 class="media-heading">Prof Alexander Kern</h5>
+                <small class="col-lg-10">"Hi Majken, could you first tell me somthing about the topic and the timeframe?"</small>
             </div>
         </div>
         <div class="media msg ">
           <a class="pull-left" href="#">
-          <img src="sschmitz.png" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+          <img src="http://localhost:5000/images/mpluegge.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
 
           </a>
           <div class="media-body">
               <small class="pull-right time"><i class="fa fa-clock-o"></i> 17:10pm</small>
-              <h5 class="media-heading">Steffen Schmitz</h5>
+              <h5 class="media-heading">Majken Plügge</h5>
               <small class="col-lg-10">"Yes sure, the Thesis deals with quality management during software development projects. The timeframe of my thesis would be from May to August 2016" </small>
           </div>
       </div>
@@ -177,8 +182,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </a>
             <div class="media-body">
                 <small class="pull-right time"><i class="fa fa-clock-o"></i> 07:10am</small>
-                <h5 class="media-heading">Prof Frank French</h5>
-                <small class="col-lg-10">"Hi Steffen, that sounds interesting! I'd love to be youre academic supervisor"</small>
+                <h5 class="media-heading">Prof Alexander Kern</h5>
+                <small class="col-lg-10">"Hi Majken, that sounds interesting! I'd love to be youre academic supervisor"</small>
             </div>
         </div>
 
@@ -189,13 +194,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
         <div class="btn-panel">
             <br></>
-            <p><paper-button raised style="float: left;"><iron-icon icon="cloud-upload"></iron-icon> Add Files</paper-button>
-            <paper-button raised style="float: right;">Send Message <iron-icon icon="send"></iron-icon></paper-button></p>
+            <paper-button raised style="float: left;"><iron-icon icon="cloud-upload"></iron-icon> Add Files</paper-button>
+            <paper-button raised style="float: right;">Send Message <iron-icon icon="send"></iron-icon></paper-button>
         </div>
       </div>
   </div>
-
-
 
     <paper-icon-button icon="arrow-back" on-click="handleClick"></paper-icon-button>
   </template>
@@ -207,7 +210,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'prof-curatedPapersDetail',
 
       handleClick: function() {
-        app.route = 'prof-curatedPapers';
+        app.route = 'curatedpapersprof';
     },
 
 

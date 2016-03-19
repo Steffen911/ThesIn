@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+ <link rel="import" href="./../bower_components/paper-dialog/paper-dialog.html">
 
 <!-- Imports für Table -->
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -35,6 +36,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       a.mail:hover{
         fill:yellow;
       }
+
+      paper-dialog {
+        position: center;
+        width: 1000px;
+        height: 250px;
+        overflow: auto;
+      }
+
     </style>
     <form is="iron-form" id="form" method="post" action="/form/handler">
     <p><paper-input name="Search Professor" label="Search Prof."></paper-input></p>
@@ -65,45 +74,80 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <td>Frank French</td>
               <td>Business Information Technology</td>
               <td>Integration Seminar</td>
-              <td></td>
+              <td>Team-leading, Innovative Ideas</td>
               <td align="center"><iron-icon icon="remove-circle" style="fill:green"></iron-icon></td>
               <td><iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon></td>
-              <td align="center" class="mail"><iron-icon icon="mail"></iron-icon></td>
+              <td align="center" class="mail"><iron-icon icon="mail" data-dialog="dialog" onclick="clickHandler(event)"></iron-icon></td>
           </tr>
           <tr>
               <td>Prof. Dr. Frank Koslowski</td>
               <td>Business Information Technology</td>
               <td>Business Administration</td>
-              <td></td>
+              <td>Controlling, Business Adminstration</td>
               <td align="center"><iron-icon icon="check-circle" style="fill:yellow"></iron-icon></td>
               <td><iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon></td>
-              <td align="center"><iron-icon icon="mail"></iron-icon></td>
+              <td align="center"><iron-icon icon="mail" data-dialog="dialog" onclick="clickHandler(event)"></iron-icon></td>
           </tr>
           <tr>
               <td>Prof. Dr. Armin Wiedemann</td>
               <td>Computer Science</td>
               <td>Computer Science</td>
-              <td></td>
+              <td>Cryptography, Security </td>
               <td align="center"><iron-icon icon="cancel" style="fill:red"></iron-icon></td>
               <td><iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon>
                   <iron-icon icon="star"></iron-icon></td>
-              <td align="center"><iron-icon icon="mail"></iron-icon></td>
+              <td align="center"><iron-icon icon="mail"  data-dialog="dialog" onclick="clickHandler(event)"></iron-icon></td>
           </tr>
       </tbody>
     </table>
+
+    <paper-dialog id="dialog">
+        <h2>Request</h2>
+        <div class="media conversation">
+            <a class="pull-left" href="#">
+             <img src="sschmitz.jpg" alt="Profile picture" style="width:50px;height:50px;border-radius: 90px;">
+            </a>
+            <div class="media-body">
+                <h5 class="media-heading">Prof Frank French</h5>
+                <small>Hi Alex, are you interested to be myacademic supervisor?</small>
+            </div>
+        </div>
+        <div class="buttons">
+           <paper-button dialog-confirm autofocus>Send your request</paper-button>
+       </div>
+      </paper-dialog>
+
+  <!---  </section> -->
+
   </template>
   <script type="text/javascript">
     $("#grid-basic").bootgrid();
   </script>
   <script>
+
+  function clickHandler(e) {
+      var button = e.target;
+      while (!button.hasAttribute('data-dialog') && button !== document.body) {
+        button = button.parentElement;
+      }
+      if (!button.hasAttribute('data-dialog')) {
+        return;
+      }
+      var id = button.getAttribute('data-dialog');
+      var dialog = document.getElementById(id);
+      if (dialog) {
+        dialog.open();
+      }
+    }
+
   (function() {
     'use strict';
 

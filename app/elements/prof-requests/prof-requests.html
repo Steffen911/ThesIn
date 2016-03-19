@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
 
 <dom-module id="prof-requests">
   <template>
@@ -49,8 +51,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <td>15SCA</td>
               <td>PA1</td>
               <td>18.02.2015-21.05.2015</td>
-              <td><paper-icon-button icon="check" on-click="handleAccept" style="fill:green"></paper-icon-button>
-                <iron-icon id="clear1" icon="clear" style="fill:red"></iron-icon>
+              <td>
+                <paper-icon-button id="1" icon="check" on-click="handleAccept" style="color: green;"></paper-icon-button>
+                <paper-icon-button id="clear1" icon="clear" style="color: red;"></paper-icon-button>
               </td>
           </tr>
           <tr>
@@ -61,8 +64,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <td>PA2</td>
               <td>15.06.2015-16.09.2015</td>
               <td>
-                <iron-icon icon="check" style="fill:green"></iron-icon>
-                <iron-icon icon="clear" style="fill:red"></iron-icon>
+                <paper-icon-button id="2" icon="check" on-click="handleAccept" style="color: green;"></paper-icon-button>
+                <paper-icon-button id="clear2" icon="clear" style="color: red;"></paper-icon-button>
               </td>
           </tr>
           <tr>
@@ -73,8 +76,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <td>BA</td>
               <td>15.03.2015-16.06.2015</td>
               <td>
-                <iron-icon icon="check" style="fill:green"></iron-icon>
-                <iron-icon icon="clear" style="fill:red"></iron-icon>
+                <paper-icon-button id="3" icon="check" on-click="handleAccept" style="color: green;"></paper-icon-button>
+                <paper-icon-button id="clear3" icon="clear" style="color: red;"></paper-icon-button>
               </td>
           </tr>
       </tbody>
@@ -88,9 +91,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 'prof-requests',
 
-    handleAccept: function() {
-      debugger;
+    handleAccept: function(event,id){
+debugger;
+    var sActIcon = "clear" +id;
+
       alert("Thank you for accept the Thesis!");
+      document.getElementById(sActIcon).hidden='true';
+
     },
 
       properties: {

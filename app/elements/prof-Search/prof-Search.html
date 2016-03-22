@@ -20,101 +20,132 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
 <link rel="stylesheet" href="../../bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/locales/de/faker.de.min.js"></script>
 <dom-module id="prof-search">
-  <template>
-    <style>
-      :host {
-        display: block;
-      }
-      iron-icon[icon="mail"]:hover{
-        fill:#E21A00;
-      }
-      iron-icon[icon="star"]:hover{
-        fill:#ffdb19;
-      }
-      a.mail:hover{
-        fill:yellow;
-      }
-    </style>
-    <form is="iron-form" id="form" method="post" action="/form/handler">
-        <paper-dropdown-menu label="Search Criteria">
-        <paper-listbox class="dropdown-content" selected="0">
-          <paper-item>Thesis Title</paper-item>
-          <paper-item>Lecturer</paper-item>
-          <paper-item>Name</paper-item>
-          <paper-item>Matriculation Number</paper-item>
-        </paper-listbox>
-        </paper-dropdown-menu>
-        <p><paper-input name="Search Professor" label="Search Thesis"></paper-input></p>
-        <p>
-          <paper-button raised style="float: right;"><iron-icon icon="search"></iron-icon>Search</paper-button>
-        </p>
-    </form>
-      <br>
-      <br>
-      <br>
-    <table id="grid-basic" class="table table-condensed table-hover table-striped">
-      <thead>
-          <tr>
-              <th data-column-id="name">Thesis Title</th>
-              <th data-column-id="faculty">Student</th>
-              <th data-column-id="section">Matriculation Number</th>
-              <th data-column-id="interests">Main Topic</th>
-              <th data-column-id="workload">Lecturer</th>
-              <th data-column-id="rating">Restriction Note</th>
-              <th data-column-id="message">Message</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td>Frank French</td>
-              <td>Shakira Steger</td>
-              <td>S165943</td>
-              <td>Accounting</td>
-              <td>Frank French</td>
-              <td align="center"><iron-icon icon="cancel" style="fill:green"></iron-icon></td>
-              <td align="center" class="mail"><iron-icon icon="mail"></iron-icon></td>
-          </tr>
-          <tr>
-              <td>Prof. Dr. Frank Koslowski</td>
-              <td>Cara Damm</td>
-              <td>S683214</td>
-              <td>Economics</td>
-              <td>Prof. Dr. Frank Koslowski</td>
-              <td align="center"><iron-icon icon="check-circle"  style="fill:red"></iron-icon></td>
-              <td align="center"><iron-icon icon="mail"></iron-icon></td>
-          </tr>
-          <tr>
-              <td>Prof. Dr. Armin Wiedemann</td>
-              <td>Steffen Schmitz</td>
-              <td>S159258</td>
-              <td>Systems Analysis</td>
-              <td>Prof. Dr. Armin Wiedemann</td>
-              <td align="center"><iron-icon icon="cancel" style="fill:green"></iron-icon></td>
-              <td align="center"><iron-icon icon="mail"></iron-icon></td>
-          </tr>
-      </tbody>
-    </table>
-  </template>
-  <script type="text/javascript">
-    $("#grid-basic").bootgrid();
-  </script>
-  <script>
-  (function() {
-    'use strict';
+<template>
+  <style>
+  :host {
+    display: block;
+  }
+  iron-icon[icon="mail"]:hover{
+    fill:#E21A00;
+  }
+  iron-icon[icon="star"]:hover{
+    fill:#ffdb19;
+  }
+  a.mail:hover{
+    fill:yellow;
+  }
+  </style>
+  <form is="iron-form" id="form" method="post" action="/form/handler">
+    <paper-dropdown-menu label="Search Criteria">
+    <paper-listbox class="dropdown-content" selected="0">
+    <paper-item>Thesis Title</paper-item>
+    <paper-item>Lecturer</paper-item>
+    <paper-item>Name</paper-item>
+    <paper-item>Matriculation Number</paper-item>
+  </paper-listbox>
+</paper-dropdown-menu>
+<p><paper-input name="Search Professor" label="Search Thesis"></paper-input></p>
+<p>
+  <paper-button raised onclick="insertRows();" style="float: right;"><iron-icon icon="search"></iron-icon>Search</paper-button>
+</p>
+</form>
+<br>
+<br>
+<br>
+<table id="grid-basic" class="table table-condensed table-hover table-striped">
+  <thead>
+    <tr>
+      <th data-column-id="name">Thesis Title</th>
+      <th data-column-id="faculty">Student</th>
+      <th data-column-id="section">Matriculation Number</th>
+      <th data-column-id="interests">Main Topic</th>
+      <th data-column-id="workload">Lecturer</th>
+      <th data-column-id="rating">Restriction Note</th>
+      <th data-column-id="message">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+</template>
+<script type="text/javascript">
+$("#grid-basic").bootgrid();
+</script>
+<script>
+(function() {
+  'use strict';
 
-    Polymer({
-      is: 'prof-search',
+  Polymer({
+    is: 'prof-search',
 
-      properties: {
-        foo: {
-          type: String,
-          value: 'prof-search',
-          notify: true
-        }
+    properties: {
+      foo: {
+        type: String,
+        value: 'prof-search',
+        notify: true
       }
+    }
+  });
+})();
+</script>
+<script>
+  faker.locale = "de";
+
+  function setAttributes(d, attrs) {
+    for(var attr in attrs) {
+      d.setAttribute(attr, attrs[attr]); 
+    }
+    return d;
+  }
+
+  function insertCell(row, child, attrs) {
+    var cell = row.insertCell();
+    cell.appendChild(child);
+    return setAttributes(cell, attrs || {});
+  }
+
+  function icon(attrs) {
+    return setAttributes(document.createElement('iron-icon'), attrs);
+  }
+
+  function text(txt) {
+    return document.createTextNode(txt);
+  }
+
+  function createA() {
+    console.log();
+    return [
+      text(faker.company.bs()), // Title
+      text(faker.name.firstName() + " " + faker.name.lastName()), // Anbetreute
+      text("S" + faker.random.number()), // Matrikelnummer
+      text(faker.company.catchPhrase()), // Thema
+      text("Prof. Dr. " + faker.name.findName()) //Betroier
+    ];
+  }
+
+  function insertRows() {
+    var N = 5;
+    for(var i=0; i < N; i++)  {
+      insertRow(createA());
+    }
+  }
+
+  function insertRow(data) {
+
+    var table = document.getElementById("grid-basic");
+    var newRow = table.insertRow();
+    data.forEach(function(val) {
+      insertCell(newRow, val);
     });
-  })();
-  </script>
+    var cancel = faker.random.boolean() ? 
+                  {icon: 'check-circle', style: 'fill:red'} :
+                  {icon: 'cancel', style: 'fill:green'};
+    insertCell(newRow, icon(cancel), {align: 'center'});
+    insertCell(newRow, icon({icon: 'mail'}), {align: 'center'});
+  }
+</script>
 </dom-module>

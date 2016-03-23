@@ -10,6 +10,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+
 
 
 <dom-module id="prof-requests">
@@ -30,7 +32,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       a.check:hover{
         fill:green;
       }
+
+      paper-dialog.colored {
+         border: 2px solid;
+         border-color: var(--paper-green-500);
+         background-color: var(--paper-light-green-50);
+         color: var(--paper-green-500);
+       }
+
+       paper-dialog.size-position {
+         position: fixed;
+         top: 16px;
+         right: 16px;
+         width: 300px;
+         height: 300px;
+         overflow: auto;
+       }
+
     </style>
+
+
+    <paper-dialog id="modal" modal>
+         <p>Accept request? </p>
+         <div class="buttons">
+           <paper-button dialog-confirm autofocus>No</paper-button>
+           <paper-button on-click="acceptrequest" dialog-confirm autofocus>Yes</paper-button>
+         </div>
+   </paper-dialog>
+
+
     <table id="grid-basic" class="table table-condensed table-hover table-striped">
       <thead>
           <tr>
@@ -52,7 +82,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <td>PA1</td>
               <td>18.02.2015-21.05.2015</td>
               <td>
-                <paper-icon-button id="1" icon="check" on-click="handleAccept" style="color: green;"></paper-icon-button>
+                <paper-icon-button id="1" icon="check" on-click="modal" data-dialog="modal" style="color: green;"></paper-icon-button>
                 <paper-icon-button id="clear1" icon="clear" style="color: red;"></paper-icon-button>
               </td>
           </tr>
@@ -80,6 +110,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-icon-button id="clear3" icon="clear" style="color: red;"></paper-icon-button>
               </td>
           </tr>
+          <tr id="row0">
+              <td>********</td>
+              <td>Majken Plügge</td>
+              <td>WWI</td>
+              <td>13SCA</td>
+              <td>BA</td>
+              <td>01.05.2016-01.08.2016</td>
+              <td>
+                <paper-icon-button id="0" icon="check" on-click="modal" data-dialog="modal" style="color: green;"></paper-icon-button>
+                <paper-icon-button id="clear1" icon="clear" style="color: red;"></paper-icon-button>
+              </td>
+          </tr>
       </tbody>
     </table>
   </template>
@@ -92,12 +134,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'prof-requests',
 
     handleAccept: function(event,id){
-debugger;
     var sActIcon = "clear" +id;
 
       alert("Thank you for accept the Thesis!");
       document.getElementById(sActIcon).hidden='true';
 
+    },
+
+    acceptrequest: function(){
+      document.getElementById("row0").style.visibility = "hidden";
+    },
+
+
+    modal: function(e){
+      debugger;
+      var button = e.target;
+      while (!button.hasAttribute('data-dialog') && button !== document.body) {
+        button = button.parentElement;
+      }
+      if (!button.hasAttribute('data-dialog')) {
+        return;
+      }
+      var id = button.getAttribute('data-dialog');
+      var dialog = document.getElementById(id);
+      if (dialog) {
+        dialog.open();
+      }
     },
 
       properties: {

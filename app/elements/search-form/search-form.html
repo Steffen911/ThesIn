@@ -20,6 +20,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
 <link rel="stylesheet" href="../../bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/locales/de/faker.de.min.js"></script>
 
 <dom-module id="search-form">
   <template>
@@ -158,11 +160,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   function createA() {
     console.log();
     return [
-      text(faker.company.bs()), // Title
+      text("Prof. Dr. " + faker.name.findName()), // Title
       text(faker.name.firstName() + " " + faker.name.lastName()), // Anbetreute
       text("S" + faker.random.number()), // Matrikelnummer
       text(faker.company.catchPhrase()), // Thema
-      text("Prof. Dr. " + faker.name.findName()) //Betroier
+      text("Prof. srsa. " + faker.name.findName()) //Betroier
     ];
   }
 
@@ -180,12 +182,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     data.forEach(function(val) {
       insertCell(newRow, val);
     });
-    var cancel = faker.random.boolean() ? 
-                  {icon: 'check-circle', style: 'fill:red'} :
-                  {icon: 'cancel', style: 'fill:green'};
-    var cell = document.createElement('div'); for(var i=0; i < 5;i++) 
-    cell.appendChild(icon({icon: 'star'}));
-    insertCell(newRow, {icon: 'cancel', style: 'fill:green'}, {align: 'center'});
+    
+    var cell = document.createElement('div'); 
+    for(var i=0; i < 5;i++){ 
+    cell.appendChild(icon({icon: 'star', style: 'fill:red'}));
+    }
+    insertCell(newRow, icon(cell), {align: 'center'});
     insertCell(newRow, icon({icon: 'cancel'}), {align: 'center'});
   }
 </script>

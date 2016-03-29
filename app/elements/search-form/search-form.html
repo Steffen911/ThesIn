@@ -20,8 +20,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
 <link rel="stylesheet" href="../../bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/locales/de/faker.de.min.js"></script>
 
 <dom-module id="search-form">
   <template>
@@ -55,7 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-checkbox>Economics</paper-checkbox>
     <paper-checkbox>Others</paper-checkbox>
     <p>
-    <paper-button raised onclick="insertRows();" style="float: right;"><iron-icon icon="search"></iron-icon>Search</paper-button></p>
+    <paper-button raised onclick="visible();" style="float: right;"><iron-icon icon="search"></iron-icon>Search</paper-button></p>
     </p>
     </form>
     <br>
@@ -74,7 +72,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </tr>
       </thead>
       <tbody>
-          
+          <tr style="display: none">
+              <td>Frank French</td>
+              <td>Business Information Technology</td>
+              <td>Integration Seminar</td>
+              <td>Team-leading, Innovative Ideas</td>
+              <td align="center"><iron-icon icon="remove-circle" style="fill:green"></iron-icon></td>
+              <td><iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon></td>
+              <td align="center" class="mail"><iron-icon icon="mail" data-dialog="dialog" onclick="clickHandler(event)"></iron-icon></td>
+          </tr>
+          <tr style="display: none">
+              <td>Prof. Dr. Frank Koslowski</td>
+              <td>Business Information Technology</td>
+              <td>Business Administration</td>
+              <td>Controlling, Business Adminstration</td>
+              <td align="center"><iron-icon icon="check-circle" style="fill:yellow"></iron-icon></td>
+              <td><iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon></td>
+              <td align="center"><iron-icon icon="mail" data-dialog="dialog" onclick="clickHandler(event)"></iron-icon></td>
+          </tr>
+          <tr style="display: none">
+              <td>Prof. Dr. Armin Wiedemann</td>
+              <td>Computer Science</td>
+              <td>Computer Science</td>
+              <td>Cryptography, Security </td>
+              <td align="center"><iron-icon icon="cancel" style="fill:red"></iron-icon></td>
+              <td><iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon>
+                  <iron-icon icon="star"></iron-icon></td>
+              <td align="center"><iron-icon icon="mail"  data-dialog="dialog" onclick="clickHandler(event)"></iron-icon></td>
+          </tr>
+
       </tbody>
     </table>
 
@@ -134,61 +168,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   })();
   </script>
   <script>
-  faker.locale = "de";
-
-  function setAttributes(d, attrs) {
-    for(var attr in attrs) {
-      d.setAttribute(attr, attrs[attr]); 
-    }
-    return d;
-  }
-
-  function insertCell(row, child, attrs) {
-    var cell = row.insertCell();
-    cell.appendChild(child);
-    return setAttributes(cell, attrs || {});
-  }
-
-  function icon(attrs) {
-    return setAttributes(document.createElement('iron-icon'), attrs);
-  }
-
-  function text(txt) {
-    return document.createTextNode(txt);
-  }
-
-  function createA() {
-    console.log();
-    return [
-      text("Prof. Dr. " + faker.name.findName()), // Title
-      text(faker.name.firstName() + " " + faker.name.lastName()), // Anbetreute
-      text("S" + faker.random.number()), // Matrikelnummer
-      text(faker.company.catchPhrase()), // Thema
-      text("Prof. srsa. " + faker.name.findName()) //Betroier
-    ];
-  }
-
-  function insertRows() {
-    var N = 5;
-    for(var i=0; i < N; i++)  {
-      insertRow(createA());
-    }
-  }
-
-  function insertRow(data) {
-
-    var table = document.getElementById("grid-basic");
-    var newRow = table.insertRow();
-    data.forEach(function(val) {
-      insertCell(newRow, val);
-    });
-    
-    var cell = document.createElement('div'); 
-    for(var i=0; i < 5;i++){ 
-    cell.appendChild(icon({icon: 'star', style: 'fill:red'}));
-    }
-    insertCell(newRow, icon(cell), {align: 'center'});
-    insertCell(newRow, icon({icon: 'cancel'}), {align: 'center'});
+  function visible() {
+    var rows = $('table.table tr');
+    rows.show();
   }
 </script>
 </dom-module>

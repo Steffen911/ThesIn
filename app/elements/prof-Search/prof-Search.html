@@ -68,7 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </tr>
   </thead>
   <tbody>
-    
+
   </tbody>
 </table>
 </template>
@@ -97,7 +97,7 @@ $("#grid-basic").bootgrid();
 
   function setAttributes(d, attrs) {
     for(var attr in attrs) {
-      d.setAttribute(attr, attrs[attr]); 
+      d.setAttribute(attr, attrs[attr]);
     }
     return d;
   }
@@ -127,11 +127,23 @@ $("#grid-basic").bootgrid();
     ];
   }
 
+  function createB() {
+    console.log();
+    return [
+      text("Analyze SAP ERP"), // Title
+      text(faker.name.firstName() + " " + faker.name.lastName()), // Anbetreute
+      text("S" + faker.random.number()), // Matrikelnummer
+      text("SAP ERP"), // Thema
+      text("Prof. Dr. " + faker.name.findName()) //Betroier
+    ];
+  }
+
   function insertRows() {
     var N = 5;
     for(var i=0; i < N; i++)  {
       insertRow(createA());
     }
+    insertRow(createB());
   }
 
   function insertRow(data) {
@@ -141,7 +153,7 @@ $("#grid-basic").bootgrid();
     data.forEach(function(val) {
       insertCell(newRow, val);
     });
-    var cancel = faker.random.boolean() ? 
+    var cancel = faker.random.boolean() ?
                   {icon: 'check-circle', style: 'fill:red'} :
                   {icon: 'cancel', style: 'fill:green'};
     insertCell(newRow, icon(cancel), {align: 'center'});
